@@ -23,6 +23,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.tensorboard import SummaryWriter
 from datetime import datetime
+import os
 
 # Set up logging
 logging.basicConfig(
@@ -81,9 +82,11 @@ def main():
     # Define transformations
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
 
-    # Create datasets for training & validation, download if necessary
-    training_set = torchvision.datasets.FashionMNIST('./data', train=True, transform=transform, download=True)
-    validation_set = torchvision.datasets.FashionMNIST('./data', train=False, transform=transform, download=True)
+    # Create datasets for training & validation, assuming data is in 'train/' and 'val/' directories
+    train_dir = './train'
+    val_dir = './val'
+    training_set = torchvision.datasets.ImageFolder(root=train_dir, transform=transform)
+    validation_set = torchvision.datasets.ImageFolder(root=val_dir, transform=transform)
 
     # Create data loaders for our datasets; shuffle for training, not for validation
     train_ds, val_ds = trainTestSplit(training_set)
@@ -95,7 +98,7 @@ def main():
     print(f'Validation set has {len(validation_set)} instances')
 
     # Visualization
-    classes = [str(i) for i in range(10)]  # Example class labels for FashionMNIST
+    classes = training_set.classes  # Get class names from the dataset
     matplot_print(train_loader, classes)
 
 if __name__ == "__main__":
