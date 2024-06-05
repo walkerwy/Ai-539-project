@@ -29,6 +29,5 @@ ImageCaptionGen
 ```
 
 ## Using this project
-1. First start by running the "coco.sh" file. It downloads the nesscary coco datasets and creats their directories on one of OSU's servers. They all share common disk.
-2. Make sure all the python libraires in the requirements.txt are installed.
-3. Use run.py to train the model.
+1. Install everything from requirements.txt.
+2. Run the "full-loop.ipynb" file.
