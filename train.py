@@ -91,8 +91,8 @@ def train_model(device, world_size, train_dataloader, valid_loader, batch_size=3
             prev_lr = current_lr  # Update previous learning rate
 
         if avg_val_loss < best_val_loss:
-            torch.save(model.state_dict(), f'model_epoch_{epoch+1}.pt')
-            checkpoint_path = f"./image-captioning/checkpoint-{epoch + 1}"
+            torch.save(model.state_dict(), f'./models/model_epoch_{epoch+1}.pt')
+            checkpoint_path = f"./models/checkpoint-{epoch + 1}"
             model.save_pretrained(checkpoint_path)
             tokenizer.save_pretrained(checkpoint_path)
             image_processor.save_pretrained(checkpoint_path)

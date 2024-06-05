@@ -1,0 +1,10 @@
+pytorch
+numpy
+datasets
+einops
+transformers
+argparse
+torchvision
+tqdm
+pycocoevalcap
+evaluate
