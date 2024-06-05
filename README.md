@@ -3,7 +3,7 @@ Please change the README.md if new files are added or you want to write more ins
 I did my best, but some of the information here or in the requirements.txt may be incorrect.
 
 ## File System Strcture
-'''
+```
 ImageCaptionGen
 |   /gitignore                  - Ignores data in /coco
 |   coco.sh                     - Downloads coco datasets
@@ -35,8 +35,7 @@ ImageCaptionGen
         |   model_at_last.pt    - Model at last epoc
         |
         |_______checkpoint      - Holds training checkpoints
-
-'''
+```
 
 ## Using this project
 1. First start by running the "coco.sh" file. It downloads the nesscary coco datasets and creats their directories on one of OSU's servers. They all share common disk.
