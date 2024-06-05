@@ -19,16 +19,7 @@ ImageCaptionGen
 |   train.py                    - Training loop and evaluation
 |   utils.py                    - Computes test metrics
 |
-|_______coco
-|       |_______images
-|       |       |   train2017   - COCO training images
-|       |       |   val2017     - COCO validation images
-|       |       |   test2017    - COCO test images
-|       |
-|       |_______annotations
-|       |       |   annotations_trainval2017            - COCO training 
-|       |       |   stuff_annotations_trainval2017      - I'm not sure
-|       |       |   image_info_test2017                 - COCO testing annotations
+|_______coco                    - Cache for COCO dataset
 |
 |_______models
         |   model_epoch_X.pt    - Best val accuracy save
