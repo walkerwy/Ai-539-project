@@ -1,2 +1,5 @@
 # ignore coco data downloads
 /coco
+
+# ignore the SWIN weights
+swin_large_patch4_window12_384_22kto1k_no_head.pth
